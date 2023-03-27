@@ -1,5 +1,4 @@
 # elementShop
 
 ## Description
-    ► elementShop is a full stack e-commerce app using Laravel. elementShop's goal is to have all of our recommended gaming tech in one place for people to purchase. All items are hand selected
-    based upon the quality of the product. We only recommend the best gaming tech to our customers and products are updated regularly.
+    ► "Welcome to our online store, the ultimate destination for all gaming enthusiasts! We bring you a carefully curated collection of Element Gaming's recommended gaming tech, from high-end gaming keyboards and mice to advanced gaming headsets and monitors. Our products are designed to enhance your gaming experience and help you take your skills to the next level. With fast and reliable shipping, easy returns, and excellent customer service, we're your go-to destination for all your gaming needs. Browse our collection and gear up for the ultimate gaming adventure!"
