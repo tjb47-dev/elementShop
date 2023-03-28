@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductsController;
+use App\Models\Products;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,12 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $products = Products::all();
+    return view('welcome', ['products' => $products]);
 });
 
 Route::get('/cart', function () {
     return view('cart');
 });
+
+Route::get('/cart/add/{id}', [ProductsController::class, 'addCart']);
 
 Route::get('/products', [ProductsController::class, 'index']);
 Route::post('/products', [ProductsController::class, 'create']);
