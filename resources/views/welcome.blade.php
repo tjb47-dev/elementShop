@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Element Gaming</title>
+    <title>Element Gaming Shop</title>
     <meta name="description" content="Free open source Tailwind CSS Store template">
     <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
     
@@ -86,13 +86,14 @@
             <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{url('/')}}">Shop</a></li>
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">Shop</a></li>
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">About</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="order-1 md:order-2">
-                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="{{url('/')}}">
+                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
                     <svg class="fill-current text-gray-800 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M5,22h14c1.103,0,2-0.897,2-2V9c0-0.553-0.447-1-1-1h-3V7c0-2.757-2.243-5-5-5S7,4.243,7,7v1H4C3.447,8,3,8.447,3,9v11 C3,21.103,3.897,22,5,22z M9,7c0-1.654,1.346-3,3-3s3,1.346,3,3v1H9V7z M5,10h2v2h2v-2h6v2h2v-2h2l0.002,10H5V10z" />
                     </svg>
@@ -102,14 +103,14 @@
 
             <div class="order-2 md:order-3 flex items-center" id="nav-content">
 
-                <a class="inline-block no-underline hover:text-black" href="{{url('/dashboard')}}">
+                <a class="inline-block no-underline hover:text-black" href="#">
                     <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <circle fill="none" cx="12" cy="7" r="3" />
                         <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
                     </svg>
                 </a>
 
-                <a class="pl-3 inline-block no-underline hover:text-black" href="{{url('/cart')}}">
+                <a class="pl-3 inline-block no-underline hover:text-black" href="#">
                     <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M21,7H7.462L5.91,3.586C5.748,3.229,5.392,3,5,3H2v2h2.356L9.09,15.414C9.252,15.771,9.608,16,10,16h8 c0.4,0,0.762-0.238,0.919-0.606l3-7c0.133-0.309,0.101-0.663-0.084-0.944C21.649,7.169,21.336,7,21,7z M17.341,14h-6.697L8.371,9 h11.112L17.341,14z" />
                         <circle cx="10.5" cy="18.5" r="1.5" />
@@ -121,22 +122,12 @@
         </div>
     </nav>
 
+
     @if(session('success'))
     <div class="alert alert-success">
     {{ session('success') }}
     </div>
     @endif
-    <!--	 
-Alternatively if you want to just have a single hero
-<section class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right" style="max-width:1600px; height: 32rem; background-image: url('https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');">
-	<div class="container mx-auto">
-		<div class="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide">
-			<h1 class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</h1>
-			<a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">products</a>
-		</div>
-	  </div>
-</section>
--->
 
     <section class="bg-white py-8">
 
@@ -166,11 +157,11 @@ Alternatively if you want to just have a single hero
                     </div>
               </div>
             </nav>
-
-            @foreach (@$products as $p)
+<!-- First Product Below -->
+        @foreach (@$products as $p)
             <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
                 <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src="{{url('img/' .$p->image )}}">
+                    <img class="hover:grow hover:shadow-lg" src="{{ url('img/'.$p->image) }}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">{{ $p->name }}</p>
                         <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -178,57 +169,11 @@ Alternatively if you want to just have a single hero
                         </svg>
                     </div>
                     <p class="pt-1 text-gray-900">{{ $p->price }}</p>
-                    <a class="fas fa-cart-plus"></a> ADD TO CART
+                    <a class="flex items-center justify-center px-8 py-3 lg:ml-4 mt-2.5 lg:mt-0 font-medium rounded-md text-green-700 bg-white shadow uppercase hover:shadow-lg transform transition hover:-translate-y-1 focus:ring-2 focus:ring-green-600 ring-offset-2 outline-none focus:shadow-lg" href="{{ url('add/'.$p->id) }}" >Add to Cart</a>
                 </a>
             </div>
-            <table id="cart" class="table table-hover table-condensed">
-                <thead>
-                    <tr>
-                        <th style="width:50%">Product</th>
-                        <th style="width:10%">Price</th>
-                        <th style="width:8%">Quantity</th>
-                        <th style="width:22%" class="text-center">Subtotal</th>
-                        <th style="width:10%"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @php $total = 0 @endphp
-                    @if(session('cart'))
-                        @foreach(session('cart') as $id => $details)
-                            @php $total += $details['price'] * $details['quantity'] @endphp
-                            <tr data-id="{{ $id }}">
-                                <td data-th="Product">
-                                    <div class="row">
-                                        <div class="col-sm-3 hidden-xs"><img src="{{ url('img/'.$details['image']) }}" width="100" height="100" class="img-responsive"/></div>
-                                        <div class="col-sm-9">
-                                            <h4 class="nomargin">{{ $details['name'] }}</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-th="Price">${{ $details['price'] }}</td>
-                                <td data-th="Quantity">
-                                    <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
-                                </td>
-                                <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
-                                <td class="actions" data-th="">
-                                    <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @endif
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" class="text-right">
-                            <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                            <button class="btn btn-success">Checkout</button>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+            @endforeach
+    </section>
 
 
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
@@ -236,10 +181,9 @@ Alternatively if you want to just have a single hero
             <div class="w-full mx-auto flex flex-wrap">
                 <div class="flex w-full lg:w-1/2 ">
                     <div class="px-3 md:px-0">
-                        <h3 class="font-bold text-gray-900">About Element Gaming</h3>
+                        <h3 class="font-bold text-gray-900">About</h3>
                         <p class="py-4">
-                        Welcome to our online store, the ultimate destination for all gaming enthusiasts! We bring you a carefully curated collection of Element Gaming's recommended gaming tech, from high-end gaming keyboards and mice to advanced gaming headsets and monitors. Our products are designed to enhance your gaming experience and help you take your skills to the next level. With fast and reliable shipping, easy returns, and excellent customer service, we're your go-to destination for all your gaming needs. Browse our collection and gear up for the ultimate gaming adventure!
-                        </p>
+                        Welcome to our online store, the ultimate destination for all gaming enthusiasts! We bring you a carefully curated collection of Element Gaming's recommended gaming tech, from high-end gaming keyboards and mice to advanced gaming headsets and monitors. Our products are designed to enhance your gaming experience and help you take your skills to the next level. With fast and reliable shipping, easy returns, and excellent customer service, we're your go-to destination for all your gaming needs. Browse our collection and gear up for the ultimate adventure!                        </p>
                     </div>
                 </div>
                 <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">

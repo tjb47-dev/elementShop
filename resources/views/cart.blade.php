@@ -152,6 +152,55 @@
               </div>
             </nav>
 
+         <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th style="width:50%">Product</th>
+                        <th style="width:10%">Price</th>
+                        <th style="width:8%">Quantity</th>
+                        <th style="width:22%" class="text-center">Subtotal</th>
+                        <th style="width:10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php $total = 0 @endphp
+                    @if(session('cart'))
+                        @foreach(session('cart') as $id => $details)
+                            @php $total += $details['price'] * $details['quantity'] @endphp
+                            <tr data-id="{{ $id }}">
+                                <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-sm-3 hidden-xs"><img src="{{ url('img/'.$details['image']) }}" width="100" height="100" class="img-responsive"/></div>
+                                        <div class="col-sm-9">
+                                            <h4 class="nomargin">{{ $details['name'] }}</h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Price">${{ $details['price'] }}</td>
+                                <td data-th="Quantity">
+                                    <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
+                                </td>
+                                <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
+                                <td class="actions" data-th="">
+                                    <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                            <button class="btn btn-success">Checkout</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>            
+
 
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
         <div class="container flex px-3 py-8 ">
@@ -160,7 +209,7 @@
                     <div class="px-3 md:px-0">
                         <h3 class="font-bold text-gray-900">About</h3>
                         <p class="py-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia.
+                        Welcome to our online store, the ultimate destination for all gaming enthusiasts! We bring you a carefully curated collection of Element Gaming's recommended gaming tech, from high-end gaming keyboards and mice to advanced gaming headsets and monitors. Our products are designed to enhance your gaming experience and help you take your skills to the next level. With fast and reliable shipping, easy returns, and excellent customer service, we're your go-to destination for all your gaming needs. Browse our collection and gear up for the ultimate gaming adventure!                        </p>
                         </p>
                     </div>
                 </div>

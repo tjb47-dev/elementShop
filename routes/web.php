@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
