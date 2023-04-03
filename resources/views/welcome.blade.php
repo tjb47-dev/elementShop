@@ -157,7 +157,7 @@
                     </div>
               </div>
             </nav>
-<!-- First Product Below -->
+<!--Product Below -->
         @foreach (@$products as $p)
             <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
                 <a href="#">
@@ -169,7 +169,7 @@
                         </svg>
                     </div>
                     <p class="pt-1 text-gray-900">{{ $p->price }}</p>
-                    <a class="flex items-center justify-center px-8 py-3 lg:ml-4 mt-2.5 lg:mt-0 font-medium rounded-md text-green-700 bg-white shadow uppercase hover:shadow-lg transform transition hover:-translate-y-1 focus:ring-2 focus:ring-green-600 ring-offset-2 outline-none focus:shadow-lg" href="{{ url('add/'.$p->id) }}" >Add to Cart</a>
+                    <a class="flex items-center justify-center px-8 py-3 lg:ml-4 mt-2.5 lg:mt-0 font-medium rounded-md text-green-700 bg-white shadow uppercase hover:shadow-lg transform transition hover:-translate-y-1 focus:ring-2 focus:ring-green-600 ring-offset-2 outline-none focus:shadow-lg" href="{{ url('cart/add/'.$p->id) }}" >Add to Cart</a>
                 </a>
             </div>
             @endforeach

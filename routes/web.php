@@ -28,8 +28,8 @@ Route::get('/cart', function () {
 Route::get('/cart/add/{id}', [ProductsController::class, 'addCart']);
 
 //Moved to api.php
-// Route::get('/products', [ProductsController::class, 'index']);
-// Route::post('/products', [ProductsController::class, 'create']);
+Route::get('/products', [ProductsController::class, 'index']);
+Route::post('/products', [ProductsController::class, 'create']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

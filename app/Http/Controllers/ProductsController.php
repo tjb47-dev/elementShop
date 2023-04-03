@@ -26,9 +26,9 @@ class ProductsController extends Controller
         return Products::create($data);
     }
 
-    public function addToCart($id){
+    public function addCart($id){
         //add the product to the cart
-        $product = Products::findOrFail($id);
+        $product = Products::find($id);
         $cart = session()->get('cart', []);
       
         if(isset($cart[$id])) {
