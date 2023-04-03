@@ -8,21 +8,26 @@ class ProductsController extends Controller
 {
     public function index() {
 
+        //using product model to pull all the products
         $products = Products::all();
+        //return all the products
         return($products);
     }
 
     public function create(Request $request) {
+        //create a new product
         $data = array(
             "name" => $request->name,
             "price" => $request->price, 
             "description" => $request->description,
             "image" => $request->image
         );
+        //return the new product
         return Products::create($data);
     }
 
     public function addToCart($id){
+        //add the product to the cart
         $product = Products::findOrFail($id);
         $cart = session()->get('cart', []);
       
